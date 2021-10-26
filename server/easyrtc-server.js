@@ -34,13 +34,13 @@ const webServer = http.createServer(app);
 // Start Socket.io so it attaches itself to Express server
 const socketServer = socketIo.listen(webServer, {"log level": 1});
 const myIceServers = [
-  { urls: ["stun:us-turn3.xirsys.com"] },
+  { urls: ["stun:ec2-3-64-250-147.eu-central-1.compute.amazonaws.com:3478"] },
   {
     username:
-      "cGZ6jeJ_ViYydWSbcqeQ3czSURVrkQsyftCtk6ihM9UDMMQ7Z4Pljg3AzMW0B1c4AAAAAGCO3s1tb3VsYXk0Mjc=",
-    credential: "5bbb7278-ab6a-11eb-a754-0242ac140004",
+      "4yfglhgupcyh",
+    credential: "cet3dmgkma6kdr3yscd",
     urls: [
-      "turn:us-turn3.xirsys.com:80?transport=udp",
+      "turn:ec2-3-64-250-147.eu-central-1.compute.amazonaws.com:3478",
     ],
   },
 ];
