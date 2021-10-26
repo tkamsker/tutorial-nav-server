@@ -34,18 +34,15 @@ const webServer = http.createServer(app);
 // Start Socket.io so it attaches itself to Express server
 const socketServer = socketIo.listen(webServer, {"log level": 1});
 const myIceServers = [
-  {"urls":"stun:stun1.l.google.com:19302"},
-  {"urls":"stun:stun2.l.google.com:19302"},
-  // {
-  //   "urls":"turn:[ADDRESS]:[PORT]",
-  //   "username":"[USERNAME]",
-  //   "credential":"[CREDENTIAL]"
-  // },
-  // {
-  //   "urls":"turn:[ADDRESS]:[PORT][?transport=tcp]",
-  //   "username":"[USERNAME]",
-  //   "credential":"[CREDENTIAL]"
-  // }
+  { urls: ["stun:us-turn3.xirsys.com"] },
+  {
+    username:
+      "cGZ6jeJ_ViYydWSbcqeQ3czSURVrkQsyftCtk6ihM9UDMMQ7Z4Pljg3AzMW0B1c4AAAAAGCO3s1tb3VsYXk0Mjc=",
+    credential: "5bbb7278-ab6a-11eb-a754-0242ac140004",
+    urls: [
+      "turn:us-turn3.xirsys.com:80?transport=udp",
+    ],
+  },
 ];
 easyrtc.setOption("appIceServers", myIceServers);
 easyrtc.setOption("logLevel", "debug");
