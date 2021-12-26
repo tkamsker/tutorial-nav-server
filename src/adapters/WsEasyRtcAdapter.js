@@ -2,7 +2,6 @@
 const NoOpAdapter = require('./NoOpAdapter');
 
 class WsEasyRtcInterface extends NoOpAdapter {
-
   constructor(easyrtc) {
     super();
 

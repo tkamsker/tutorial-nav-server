@@ -1,12 +1,12 @@
 const WsEasyRtcAdapter = require("./WsEasyRtcAdapter");
 const EasyRtcAdapter = require("./EasyRtcAdapter");
 const WebrtcAdapter = require("./naf-webrtc-adapter");
-const SocketioAdapter = require('./naf-socketio-adapter');
+const SocketioAdapter = require("./naf-socketio-adapter");
 
 class AdapterFactory {
   constructor() {
     this.adapters = {
-      "wseasyrtc": WsEasyRtcAdapter,
+      wseasyrtc: WsEasyRtcAdapter,
       "easyrtc": EasyRtcAdapter,
       "socketio": SocketioAdapter,
       "webrtc": WebrtcAdapter,
@@ -28,9 +28,7 @@ class AdapterFactory {
       return new AdapterClass();
     } else {
       throw new Error(
-        "Adapter: " +
-          adapterName +
-          " not registered. Please use NAF.adapters.register() to register this adapter."
+        "Adapter: " + adapterName + " not registered. Please use NAF.adapters.register() to register this adapter."
       );
     }
   }
