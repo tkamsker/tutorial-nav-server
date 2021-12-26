@@ -533,6 +533,16 @@ module.exports = async (env, argv) => {
         minify: {
           removeComments: false
         }
+      }),
+      new HTMLWebpackPlugin({
+        filename: "projekt.html",
+        template: path.join(__dirname, "src", "projekt.html"),
+        chunks: ["webxr-polyfill", "support", "projekt"],
+        chunksSortMode: "manual",
+        inject: "head",
+        minify: {
+          removeComments: false
+        }
       }) //,
       /*
       new HTMLWebpackPlugin({

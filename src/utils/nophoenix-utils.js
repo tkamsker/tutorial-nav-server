@@ -241,10 +241,11 @@ export async function createAndRedirectToNewHub(name, sceneId, replace) {
     }
   }
 */
-  let url = "/hub.html?hub_id=54321";
-  const hub_id = "12345";
+  //  let url = "/hub.html?hub_id=54321";
+  let url = "/projekt.html?proj_id=54321";
+  const proj_id = "12345";
   if (isLocalClient()) {
-    url = `/hub.html?hub_id=${hub_id}`;
+    url = `/projekt.html?proj_id=${proj_id}`;
   }
 
   if (replace) {

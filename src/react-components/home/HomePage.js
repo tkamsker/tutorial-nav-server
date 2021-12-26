@@ -9,7 +9,7 @@ import { PWAButton } from "./PWAButton";
 // import { usePublicRooms } from "./usePublicRooms";
 import styles from "./HomePage.scss";
 // import { AuthContext } from "../auth/AuthContext";
-// import { createAndRedirectToNewHub } from "../../utils/phoenix-utils";
+import { createAndRedirectToNewHub } from "../../utils/nophoenix-utils";
 // import { MediaGrid } from "../room/MediaGrid";
 // import { MediaTile } from "../room/MediaTiles";
 import { PageContainer } from "../layout/PageContainer";
