@@ -1,4 +1,4 @@
-import { fetchReticulumAuthenticated } from "./phoenix-utils";
+import { fetchReticulumAuthenticated } from "./nophoenix-utils";
 import { proxiedUrlFor } from "./media-url-utils";
 
 const AVATARS_API = "/api/v1/avatars";

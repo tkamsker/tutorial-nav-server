@@ -19,7 +19,7 @@ import {
   sluglessPath
 } from "../utils/history";
 import StateRoute from "./state-route.js";
-import { getPresenceProfileForSession, hubUrl } from "../utils/phoenix-utils";
+import { getPresenceProfileForSession, hubUrl } from "../utils/nophoenix-utils";
 import { getMicrophonePresences } from "../utils/microphone-presence";
 import { getCurrentStreamer } from "../utils/component-utils";
 
@@ -782,7 +782,8 @@ class UIRoot extends Component {
 
   renderEntryStartPanel = () => {
     const { hasAcceptedProfile, hasChangedName } = this.props.store.state.activity;
-    const promptForNameAndAvatarBeforeEntry = this.props.hubIsBound ? !hasAcceptedProfile : !hasChangedName;
+    //const promptForNameAndAvatarBeforeEntry = this.props.hubIsBound ? !hasAcceptedProfile : !hasChangedName;
+    const promptForNameAndAvatarBeforeEntry = false;
 
     // TODO: What does onEnteringCanceled do?
     return (

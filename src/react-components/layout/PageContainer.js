@@ -29,7 +29,7 @@ export function PageContainer({ children, ...rest }) {
       communityUrl={configs.link("community", "https://discord.gg/dFJncWwHun")}
       isAdmin={auth_isAdmin} // war auth.isAdmin
       isSignedIn={auth_isSignedIn} // war auth.isSignedIn
-      email={auth_email}  // war auth.email
+      email={auth_email} // war auth.email
       onSignOut={auth_signOut} // auth.signOut
       hidePoweredBy={configs.feature("hide_powered_by")}
       showWhatsNewLink={configs.feature("show_whats_new_link")}

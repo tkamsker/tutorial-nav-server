@@ -24,6 +24,7 @@ export function hubUrl(hubId, extraParams) {
 
   let url;
   if (isLocalClient()) {
+    //url = new URL(`/projekt.html`, location.href);
     url = new URL(`/hub.html`, location.href);
     url.searchParams.set("hub_id", hubId);
   } else {
@@ -194,6 +195,9 @@ export function fetchReticulumAuthenticated(url, method = "GET", payload) {
 export async function createAndRedirectToNewHub(name, sceneId, replace) {
   // const createUrl = getReticulumFetchUrl("/api/v1/hubs");
   const payload = { hub: { name: name || generateHubName() } };
+  if (sceneId == null) {
+    sceneId = "1234";
+  }
 
   if (sceneId) {
     payload.hub.scene_id = sceneId;
@@ -241,11 +245,13 @@ export async function createAndRedirectToNewHub(name, sceneId, replace) {
     }
   }
 */
-  //  let url = "/hub.html?hub_id=54321";
-  let url = "/projekt.html?proj_id=54321";
-  const proj_id = "12345";
+  let url = "/hub.html?hub_id=54321";
+  //let url = "/projekt.html?proj_id=54321";
+  //const proj_id = "12345";
+  const hub_id = "12345";
   if (isLocalClient()) {
-    url = `/projekt.html?proj_id=${proj_id}`;
+    //url = `/projekt.html?proj_id=${proj_id}`;
+    url = `/hub.html?hub_id=${hub_id}`;
   }
 
   if (replace) {
@@ -306,19 +312,19 @@ export function migrateChannelToSocket(oldChannel, socket, params) {
 }
 
 */
-/*
+
 export function discordBridgesForPresences(presences) {
   const channels = [];
   for (const p of Object.values(presences)) {
     for (const m of p.metas) {
       if (m.profile && m.profile.discordBridges) {
-        Array.prototype.push.apply(channels, m.profile.discordBridges.map(b => b.channel.name));
+        //Array.prototype.push.apply(channels, m.profile.discordBridges.map(b => b.channel.name));
       }
     }
   }
   return channels;
 }
-*/
+
 export function hasEmbedPresences(presences) {
   for (const p of Object.values(presences)) {
     for (const m of p.metas) {

@@ -17,7 +17,7 @@ export function CreateRoomButton() {
       preset="primary"
       onClick={e => {
         e.preventDefault();
-        createAndRedirectToNewHub(null, null, false);
+        createAndRedirectToNewHub("Test", 1234, true);
         // e.push('/hub.html?hub_id=123');
         //        history.push("/hub.html?hub_id=123")
       }}

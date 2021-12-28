@@ -356,6 +356,7 @@ async function updateEnvironmentForHub(hub, entryManager) {
 
   const environmentScene = document.querySelector("#environment-scene");
   const sceneEl = document.querySelector("a-scene");
+  console.log("Scene:", hub.scene);
 
   if (hub.scene) {
     isLegacyBundle = false;

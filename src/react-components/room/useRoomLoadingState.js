@@ -64,75 +64,60 @@ export function useRoomLoadingState(sceneEl) {
     networkConnected: false
   });
 
-  const onObjectLoading = useCallback(
-    () => {
-      clearTimeout(loadingTimeoutRef.current);
-      dispatch({ type: "object-loading" });
-    },
-    [dispatch]
-  );
+  const onObjectLoading = useCallback(() => {
+    clearTimeout(loadingTimeoutRef.current);
+    dispatch({ type: "object-loading" });
+  }, [dispatch]);
 
-  const onObjectLoaded = useCallback(
-    () => {
-      clearTimeout(loadingTimeoutRef.current);
+  const onObjectLoaded = useCallback(() => {
+    clearTimeout(loadingTimeoutRef.current);
 
-      dispatch({ type: "object-loaded" });
+    dispatch({ type: "object-loaded" });
 
-      // Objects can start loading as a result of loading another object. Wait 1.5 seconds before calling
-      // all-objects-loaded to try to catch loading all objects.
-      // TODO: Determine a better way to ensure the object dependency chain has resolved, or switch to a
-      // progressive loading model where all objects don't have to be loaded to enter the room.
-      loadingTimeoutRef.current = setTimeout(() => {
-        dispatch({ type: "all-objects-loaded" });
-      }, 1500);
-    },
-    [dispatch]
-  );
+    // Objects can start loading as a result of loading another object. Wait 1.5 seconds before calling
+    // all-objects-loaded to try to catch loading all objects.
+    // TODO: Determine a better way to ensure the object dependency chain has resolved, or switch to a
+    // progressive loading model where all objects don't have to be loaded to enter the room.
+    loadingTimeoutRef.current = setTimeout(() => {
+      dispatch({ type: "all-objects-loaded" });
+    }, 1500);
+  }, [dispatch]);
 
-  const onEnvironmentLoaded = useCallback(
-    () => {
-      dispatch({ type: "environment-loaded" });
-    },
-    [dispatch]
-  );
+  const onEnvironmentLoaded = useCallback(() => {
+    dispatch({ type: "environment-loaded" });
+  }, [dispatch]);
 
-  const onNetworkConnected = useCallback(
-    () => {
-      dispatch({ type: "network-connected" });
-    },
-    [dispatch]
-  );
+  const onNetworkConnected = useCallback(() => {
+    dispatch({ type: "network-connected" });
+  }, [dispatch]);
 
-  useEffect(
-    () => {
-      // Once the scene has loaded the dependencies to this hook will change,
-      // the event listeners will be removed, and we can prevent adding them again.
-      if (loading) {
-        sceneEl.addEventListener("model-loading", onObjectLoading);
-        sceneEl.addEventListener("image-loading", onObjectLoading);
-        sceneEl.addEventListener("pdf-loading", onObjectLoading);
-        sceneEl.addEventListener("model-loaded", onObjectLoaded);
-        sceneEl.addEventListener("image-loaded", onObjectLoaded);
-        sceneEl.addEventListener("pdf-loaded", onObjectLoaded);
-        sceneEl.addEventListener("model-error", onObjectLoaded);
-        sceneEl.addEventListener("environment-scene-loaded", onEnvironmentLoaded);
-        sceneEl.addEventListener("didConnectToNetworkedScene", onNetworkConnected);
-      }
+  useEffect(() => {
+    // Once the scene has loaded the dependencies to this hook will change,
+    // the event listeners will be removed, and we can prevent adding them again.
+    if (loading) {
+      sceneEl.addEventListener("model-loading", onObjectLoading);
+      sceneEl.addEventListener("pdf-loading", onObjectLoading);
+      sceneEl.addEventListener("model-loaded", onObjectLoaded);
+      sceneEl.addEventListener("image-loaded", onObjectLoaded);
+      sceneEl.addEventListener("pdf-loaded", onObjectLoaded);
+      sceneEl.addEventListener("model-error", onObjectLoaded);
+      sceneEl.addEventListener("environment-scene-loaded", onEnvironmentLoaded);
+      sceneEl.addEventListener("didConnectToNetworkedScene", onNetworkConnected);
+    }
+    sceneEl.addEventListener("image-loading", onObjectLoading);
 
-      return () => {
-        sceneEl.removeEventListener("model-loading", onObjectLoading);
-        sceneEl.removeEventListener("image-loading", onObjectLoading);
-        sceneEl.removeEventListener("pdf-loading", onObjectLoading);
-        sceneEl.removeEventListener("model-loaded", onObjectLoaded);
-        sceneEl.removeEventListener("image-loaded", onObjectLoaded);
-        sceneEl.removeEventListener("pdf-loaded", onObjectLoaded);
-        sceneEl.removeEventListener("model-error", onObjectLoaded);
-        sceneEl.removeEventListener("environment-scene-loaded", onEnvironmentLoaded);
-        sceneEl.removeEventListener("didConnectToNetworkedScene", onNetworkConnected);
-      };
-    },
-    [sceneEl, loading, onObjectLoaded, onObjectLoading, onEnvironmentLoaded, onNetworkConnected]
-  );
+    sceneEl.removeEventListener("model-loading", onObjectLoading);
+    return () => {
+      sceneEl.removeEventListener("pdf-loading", onObjectLoading);
+      sceneEl.removeEventListener("model-loaded", onObjectLoaded);
+      sceneEl.removeEventListener("image-loaded", onObjectLoaded);
+      sceneEl.removeEventListener("pdf-loaded", onObjectLoaded);
+      sceneEl.removeEventListener("model-error", onObjectLoaded);
+      sceneEl.removeEventListener("environment-scene-loaded", onEnvironmentLoaded);
+      sceneEl.removeEventListener("didConnectToNetworkedScene", onNetworkConnected);
+    };
+  }, [sceneEl, loading, onObjectLoaded, onObjectLoading, onEnvironmentLoaded, onNetworkConnected]);
+  sceneEl.removeEventListener("image-loading", onObjectLoading);
 
   const intl = useIntl();
 

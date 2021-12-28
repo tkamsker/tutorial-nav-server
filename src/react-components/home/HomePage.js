@@ -60,11 +60,11 @@ const sortedPublicRooms = 0;
 
   const auth_isAdmin = true;
 
-  const canCreateRooms = !configs.feature("disable_room_creation") || auth_isAdmin;  // war auth.isAdmin
-  console.log("CanCreaterooms",canCreateRooms);
+  const canCreateRooms = !configs.feature("disable_room_creation") || auth_isAdmin; // war auth.isAdmin
+  console.log("CanCreaterooms", canCreateRooms);
   // const email = auth.email;
-  const email = "test@test.com"  
-  const auth_isSignedIn = false; // kick auth 
+  const email = "test@test.com";
+  const auth_isSignedIn = false; // kick auth
   const auth_signOut = true;
   return (
     <PageContainer className={styles.homePage}>
@@ -97,7 +97,6 @@ const sortedPublicRooms = 0;
             <div className={styles.appDescription}>{configs.translation("app-description")}</div>
             {canCreateRooms && <CreateRoomButton />}
             <PWAButton />
-           
           </div>
           <div className={styles.heroImageContainer}>
             <img

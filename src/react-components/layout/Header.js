@@ -94,20 +94,22 @@ export function Header({
                   values={{ email: maskEmail(email) }}
                 />
               </span>
-              <a href="#" onClick={onSignOut}>
-                <FormattedMessage id="header.sign-out" defaultMessage="Sign Out" />
-              </a>
             </div>
           ) : (
             <SignInButton />
           )}
         </div>
-        
       </Container>
     </header>
   );
 }
 
+/*
+              <a href="#" onClick={onSignOut}>
+                <FormattedMessage id="header.sign-out" defaultMessage="Sign Out" />
+              </a>
+
+*/
 Header.propTypes = {
   appName: PropTypes.string,
   appLogo: PropTypes.string,

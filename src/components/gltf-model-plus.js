@@ -117,6 +117,7 @@ function cloneGltf(gltf) {
 }
 
 function getHubsComponents(node) {
+  console.log("getHubsComponents", node);
   const hubsComponents =
     node.userData.gltfExtensions &&
     (node.userData.gltfExtensions.MOZ_hubs_components || node.userData.gltfExtensions.HUBS_components);
@@ -630,6 +631,7 @@ class GLTFMozTextureRGBE {
 }
 
 export async function loadGLTF(src, contentType, onProgress, jsonPreprocessor) {
+  console.log("loadGLTF", contentType);
   let gltfUrl = src;
   let fileMap;
 
@@ -670,7 +672,7 @@ export async function loadGLTF(src, contentType, onProgress, jsonPreprocessor) {
 }
 
 export async function loadModel(src, contentType = null, useCache = false, jsonPreprocessor = null) {
-  console.log(`Loading model ${src}`);
+  console.log(`Loading model: ${src}`);
   if (useCache) {
     if (gltfCache.has(src)) {
       gltfCache.retain(src);

@@ -89,6 +89,7 @@ MobileNav.propTypes = {
   isAdmin: PropTypes.bool,
   isSignedIn: PropTypes.bool,
   email: PropTypes.string,
-  onSignOut: PropTypes.func,
+  //onSignOut: PropTypes.func,
+  onSignOut: PropTypes.bool,
   isHmc: PropTypes.bool
 };

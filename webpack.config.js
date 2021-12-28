@@ -262,7 +262,7 @@ module.exports = async (env, argv) => {
     entry: {
 //      support: path.join(__dirname, "src", "support.js"),
       index: path.join(__dirname, "src", "index.js"),
- //     hub: path.join(__dirname, "src", "hub.js"),
+      hub: path.join(__dirname, "src", "hub.js")
  //     scene: path.join(__dirname, "src", "scene.js"),
  //     avatar: path.join(__dirname, "src", "avatar.js"),
  //     link: path.join(__dirname, "src", "link.js"),

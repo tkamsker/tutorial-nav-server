@@ -1,7 +1,7 @@
 import jwtDecode from "jwt-decode";
 import { EventTarget } from "event-target-shim";
 import { Presence } from "phoenix";
-import { migrateChannelToSocket, discordBridgesForPresences } from "./phoenix-utils";
+import { migrateChannelToSocket, discordBridgesForPresences } from "./nophoenix-utils";
 import configs from "./configs";
 
 const MS_PER_DAY = 1000 * 60 * 60 * 24;

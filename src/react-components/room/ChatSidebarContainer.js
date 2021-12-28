@@ -14,7 +14,7 @@ import {
 } from "./ChatSidebar";
 import { useMaintainScrollPosition } from "../misc/useMaintainScrollPosition";
 import { spawnChatMessage } from "../chat-message";
-import { discordBridgesForPresences } from "../../utils/phoenix-utils";
+import { discordBridgesForPresences } from "../../utils/nophoenix-utils";
 import { useIntl } from "react-intl";
 
 const ChatContext = createContext({ messageGroups: [], sendMessage: () => {} });

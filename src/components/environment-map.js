@@ -17,17 +17,20 @@ export async function createDefaultEnvironmentMap() {
 
 AFRAME.registerComponent("environment-map", {
   init() {
+    console.log("register environment-map init");
     this.environmentMap = null;
 
     this.updateEnvironmentMap = this.updateEnvironmentMap.bind(this);
   },
 
   updateEnvironmentMap(environmentMap) {
+    console.log("register environment-map update");
     this.environmentMap = environmentMap;
     this.applyEnvironmentMap(this.el.object3D);
   },
 
   applyEnvironmentMap(object3D) {
+    console.log("register environment-map applyEnvironmentMap");
     object3D.traverse(object => {
       forEachMaterial(object, material => {
         if (material.isMeshStandardMaterial) {

@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import configs from "../utils/configs";
 import IfFeature from "./if-feature";
-import { fetchReticulumAuthenticated } from "../utils/phoenix-utils";
+import { fetchReticulumAuthenticated } from "../utils/nophoenix-utils";
 import { upload } from "../utils/media-utils";
 import { ensureAvatarMaterial } from "../utils/avatar-utils";
 

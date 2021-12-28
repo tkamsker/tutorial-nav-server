@@ -286,7 +286,7 @@ let routerBaseName = document.location.pathname
   .slice(0, 2)
   .join("/");
 
-if (document.location.pathname.includes("hub.html")) {
+if (document.location.pathname.includes("projekt.html")) {
   routerBaseName = "/";
 }
 

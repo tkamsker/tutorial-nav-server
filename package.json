@@ -89,6 +89,8 @@
     "nipplejs": "github:mozillareality/nipplejs#mr-social-client/master",
     "node-ensure": "0.0.0",
     "normalize.css": "^8.0.1",
+    "pdfjs-dist": "^2.1.266",
+    "phoenix": "github:gfodor/phoenix-js#master",
     "open-easyrtc": "^2.0.5",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
@@ -108,9 +110,17 @@
     "screenfull": "^4.0.1",
     "semver": "^7.3.2",
     "socket.io": "^2.3.0",
+    "three": "github:mozillareality/three.js#hubs/master",
+    "three-ammo": "^1.0.12",
+    "three-bmfont-text": "github:mozillareality/three-bmfont-text#hubs/master",
+    "three-mesh-bvh": "^0.1.2",
+    "three-pathfinding": "github:MozillaReality/three-pathfinding#hubs/master2",
+    "three-to-ammo": "github:infinitelee/three-to-ammo",
+    "use-clipboard-copy": "^0.1.2",
     "uuid": "^3.2.1",
     "webrtc-adapter": "^7.7.0",
-    "webxr-polyfill": "^2.0.3"
+    "webxr-polyfill": "^2.0.3",
+    "zip-loader": "^1.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.3.3",

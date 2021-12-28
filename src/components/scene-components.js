@@ -1,4 +1,4 @@
-import "./animation";
+/* import "./animation";
 import "./ambient-light";
 import "./animation-mixer";
 import "./audio-feedback";
@@ -15,7 +15,7 @@ import "./loop-animation";
 import "./uv-scroll";
 import "./media-loader";
 import "./point-light";
-import "./quack";
+import "./quack";*/
 import "./scene-preview-camera";
 import "./skybox";
 import "./spawn-controller";

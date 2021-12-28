@@ -7,6 +7,7 @@ import { AudioType, DistanceModelType, SourceType } from "./components/audio-par
 import { updateAudioSettings } from "./update-audio-settings";
 
 function registerRootSceneComponent(componentName) {
+  console.log("registerRootSceneComponent", componentName); //tk
   AFRAME.GLTFModelPlus.registerComponent(componentName, componentName, (el, componentName, componentData) => {
     const sceneEl = AFRAME.scenes[0];
 
