@@ -1,5 +1,5 @@
 /* global require AFRAME THREE setTimeout clearTimeout */
-import { addMedia } from "../utils/media-utils";
+import { addMedia } from "../utils/2media-utils";
 import { waitForEvent } from "../utils/async-utils";
 import { ObjectContentOrigins } from "../object-types";
 import { paths } from "../systems/userinput/paths";

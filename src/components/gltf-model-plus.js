@@ -1,7 +1,7 @@
 import nextTick from "../utils/next-tick";
 import { updateMaterials, mapMaterials, convertStandardMaterial } from "../utils/material-utils";
 import SketchfabZipWorker from "../workers/sketchfab-zip.worker.js";
-import { getCustomGLTFParserURLResolver } from "../utils/media-url-utils";
+//import { getCustomGLTFParserURLResolver } from "../utils/media-url-utils";
 import { promisifyWorker } from "../utils/promisify-worker.js";
 import { MeshBVH, acceleratedRaycast } from "three-mesh-bvh";
 import { disposeNode, cloneObject3D } from "../utils/three-utils";
@@ -631,7 +631,8 @@ class GLTFMozTextureRGBE {
 }
 
 export async function loadGLTF(src, contentType, onProgress, jsonPreprocessor) {
-  console.log("loadGLTF", contentType);
+  console.log("loadGLTF contentType", src);
+  console.log("loadGLTF contentType", contentType);
   let gltfUrl = src;
   let fileMap;
 
@@ -641,7 +642,8 @@ export async function loadGLTF(src, contentType, onProgress, jsonPreprocessor) {
   }
 
   const loadingManager = new THREE.LoadingManager();
-  loadingManager.setURLModifier(getCustomGLTFParserURLResolver(gltfUrl));
+  //  loadingManager.setURLModifier(getCustomGLTFParserURLResolver(gltfUrl));
+  loadingManager.setURLModifier(gltfUrl);
   const gltfLoader = new THREE.GLTFLoader(loadingManager);
   gltfLoader
     .register(parser => new GLTFHubsComponentsExtension(parser))

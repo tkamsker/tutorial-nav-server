@@ -1,4 +1,4 @@
-import { addAndArrangeMedia } from "../utils/media-utils";
+import { addAndArrangeMedia } from "../utils/2media-utils";
 import { createImageBitmap } from "../utils/image-bitmap-utils";
 import { ObjectTypes } from "../object-types";
 import { paths } from "../systems/userinput/paths";

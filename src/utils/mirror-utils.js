@@ -1,4 +1,4 @@
-import { cloneMedia, closeExistingMediaMirror } from "./media-utils";
+import { cloneMedia, closeExistingMediaMirror } from "./2media-utils";
 let mirrorTarget;
 export function getCurrentMirroredMedia() {
   mirrorTarget = mirrorTarget || document.querySelector("#media-mirror-target");

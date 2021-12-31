@@ -1,5 +1,5 @@
-import { cloneMedia } from "../utils/media-utils";
-import { closeExistingMediaMirror } from "../utils/media-utils";
+import { cloneMedia } from "../utils/2media-utils";
+import { closeExistingMediaMirror } from "../utils/2media-utils";
 
 AFRAME.registerComponent("mirror-media-button", {
   init() {

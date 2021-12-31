@@ -45,6 +45,9 @@ let reticulumMeta = null;
 let invalidatedReticulumMetaThisSession = false;
 
 export function getReticulumFetchUrl(path, absolute = false, host = null, port = null) {
+  if (host == null) {
+    return "http://localhost"; // tk workaround 
+  }
   if (host || hasReticulumServer()) {
     return `https://${host || configs.RETICULUM_SERVER}${port ? `:${port}` : ""}${path}`;
   } else if (absolute) {
@@ -245,13 +248,14 @@ export async function createAndRedirectToNewHub(name, sceneId, replace) {
     }
   }
 */
-  let url = "/hub.html?hub_id=54321";
+  let url = "/mini.html?id=123";
+  //let url = "/hub.html?hub_id=54321";
   //let url = "/projekt.html?proj_id=54321";
   //const proj_id = "12345";
   const hub_id = "12345";
   if (isLocalClient()) {
     //url = `/projekt.html?proj_id=${proj_id}`;
-    url = `/hub.html?hub_id=${hub_id}`;
+    let xurl = `/hub.html?hub_id=${hub_id}`;
   }
 
   if (replace) {

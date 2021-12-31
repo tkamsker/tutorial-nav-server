@@ -1,4 +1,4 @@
-import { closeExistingMediaMirror } from "../utils/media-utils";
+import { closeExistingMediaMirror } from "../utils/2media-utils";
 
 AFRAME.registerComponent("close-mirrored-media-button", {
   init() {

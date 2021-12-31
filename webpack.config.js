@@ -260,19 +260,20 @@ module.exports = async (env, argv) => {
       fs: "empty"
     },
     entry: {
-//      support: path.join(__dirname, "src", "support.js"),
+      //      support: path.join(__dirname, "src", "support.js"),
       index: path.join(__dirname, "src", "index.js"),
+      mini: path.join(__dirname, "src", "mini.js"),
       hub: path.join(__dirname, "src", "hub.js")
- //     scene: path.join(__dirname, "src", "scene.js"),
- //     avatar: path.join(__dirname, "src", "avatar.js"),
- //     link: path.join(__dirname, "src", "link.js"),
- //     discord: path.join(__dirname, "src", "discord.js"),
- //     cloud: path.join(__dirname, "src", "cloud.js"),
- //     signin: path.join(__dirname, "src", "signin.js"),
- //     verify: path.join(__dirname, "src", "verify.js"),
- //     tokens: path.join(__dirname, "src", "tokens.js"),
-//      "whats-new": path.join(__dirname, "src", "whats-new.js"),
-//      "webxr-polyfill": path.join(__dirname, "src", "webxr-polyfill.js")
+      //     scene: path.join(__dirname, "src", "scene.js"),
+      //     avatar: path.join(__dirname, "src", "avatar.js"),
+      //     link: path.join(__dirname, "src", "link.js"),
+      //     discord: path.join(__dirname, "src", "discord.js"),
+      //     cloud: path.join(__dirname, "src", "cloud.js"),
+      //     signin: path.join(__dirname, "src", "signin.js"),
+      //     verify: path.join(__dirname, "src", "verify.js"),
+      //     tokens: path.join(__dirname, "src", "tokens.js"),
+      //      "whats-new": path.join(__dirname, "src", "whats-new.js"),
+      //      "webxr-polyfill": path.join(__dirname, "src", "webxr-polyfill.js")
     },
     output: {
       filename: "assets/js/[name]-[chunkhash].js",
@@ -535,6 +536,17 @@ module.exports = async (env, argv) => {
         }
       }),
       new HTMLWebpackPlugin({
+        filename: "mini.html",
+        template: path.join(__dirname, "src", "mini.html"),
+        chunks: ["webxr-polyfill", "support", "mini"],
+        chunksSortMode: "manual",
+        inject: "head",
+        minify: {
+          removeComments: false
+        }
+      }),
+
+      new HTMLWebpackPlugin({
         filename: "projekt.html",
         template: path.join(__dirname, "src", "projekt.html"),
         chunks: ["webxr-polyfill", "support", "projekt"],
@@ -543,7 +555,13 @@ module.exports = async (env, argv) => {
         minify: {
           removeComments: false
         }
-      }) //,
+      }),
+      new CopyWebpackPlugin([
+        {
+          from: "src/hub.service.js",
+          to: "hub.service.js"
+        }
+      ]), //,
       /*
       new HTMLWebpackPlugin({
         filename: "scene.html",
@@ -637,7 +655,6 @@ module.exports = async (env, argv) => {
         }
       ]),
       */
-     ,
       // Extract required css and add a content hash.
       new MiniCssExtractPlugin({
         filename: "assets/stylesheets/[name]-[contenthash].css",

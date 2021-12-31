@@ -1,5 +1,5 @@
 import { disposeTexture } from "../utils/material-utils";
-import { createVideoOrAudioEl } from "../utils/media-utils";
+import { createVideoOrAudioEl } from "../utils/2media-utils";
 import { findNode } from "../utils/three-utils";
 
 /**

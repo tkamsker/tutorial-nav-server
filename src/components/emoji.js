@@ -1,5 +1,5 @@
 /* global performance */
-import { addMedia } from "../utils/media-utils";
+import { addMedia } from "../utils/2media-utils";
 import { SOUND_SPAWN_EMOJI } from "../systems/sound-effects-system";
 import emoji0Particle from "../assets/images/emojis/emoji_0.png";
 import emoji1Particle from "../assets/images/emojis/emoji_1.png";

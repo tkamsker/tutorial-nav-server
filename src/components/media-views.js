@@ -6,7 +6,7 @@ import audioIcon from "../assets/images/audio.png";
 import { paths } from "../systems/userinput/paths";
 import HLS from "hls.js";
 import { MediaPlayer } from "dashjs";
-import { addAndArrangeMedia, createImageTexture, createVideoOrAudioEl } from "../utils/media-utils";
+import { addAndArrangeMedia, createImageTexture, createVideoOrAudioEl } from "../utils/2media-utils";
 import { disposeTexture } from "../utils/material-utils";
 import { proxiedUrlFor } from "../utils/media-url-utils";
 import { buildAbsoluteURL } from "url-toolkit";

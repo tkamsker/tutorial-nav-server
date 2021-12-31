@@ -1,4 +1,4 @@
-import { injectCustomShaderChunks } from "../utils/media-utils";
+import { injectCustomShaderChunks } from "../utils/2media-utils";
 import { AVATAR_TYPES } from "../utils/avatar-utils";
 import { registerComponentInstance, deregisterComponentInstance } from "../utils/component-utils";
 import defaultAvatar from "../assets/models/DefaultAvatar.glb";
